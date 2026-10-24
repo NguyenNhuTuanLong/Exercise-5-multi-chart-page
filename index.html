@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exercise 5.1 - Vertical Bar Chart</title>
+    <title>Exercise 5 - Multi Charts</title>
     <!-- Nhúng file CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Energy Consumption by Screen Type</h1>
-    
-    <!-- Khung chứa biểu đồ có id riêng biệt theo hướng dẫn -->
+    <h1>Energy Consumption of 55" TVs</h1>
+    <!-- Khung chứa biểu đồ cột dọc của Exercise 5.1 -->
     <div id="bar-chart" class="responsive-svg-container"></div>
 
-    <!-- Nhúng thư viện D3 và file code JS -->
+    <h1>Average Electricity Price (1998-2024)</h1>
+    <!-- Khung chứa biểu đồ đường của Exercise 5.2 -->
+    <div id="line-chart" class="responsive-svg-container"></div>
+
+    <!-- Nhúng thư viện D3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- Code vẽ biểu đồ bài 5.1 -->
     <script src="js/main.js"></script>
+    <!-- Code vẽ biểu đồ bài 5.2 -->
+    <script src="js/line-chart.js"></script>
 </body>
 </html>
