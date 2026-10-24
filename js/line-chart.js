@@ -21,12 +21,9 @@ const innerChartLine = svgLine.append("g")
 // ==========================================================
 // 2. ĐỌC DỮ LIỆU TỪ CSV VỚI TÊN CỘT CHUẨN XÁC
 // ==========================================================
-// Code sẽ tìm đọc đúng file có tên ARE_Spot_Prices.csv trong thư mục data
 d3.csv("data/ARE_Spot_Prices.csv", d => {
     return {
-        // Lấy đúng tên cột Year và ép thành số
         year: +d.Year, 
-        // Lấy chính xác tên cột giá trị trung bình từ file dữ liệu
         averagePrice: +d["Average Price (notTas-Snowy)"] 
     };
 }).then(data => {
@@ -71,7 +68,7 @@ const drawLineChart = data => {
                   .attr("r", 4) // Bán kính dấu chấm là 4px
                   .attr("cx", d => xScale(d.year)) // Tọa độ X là năm
                   .attr("cy", d => yScale(d.averagePrice)) // Tọa độ Y là giá
-                  .attr("fill", "black"); // Dấu chấm màu đen
+                  .attr("fill", "green"); // SỬA TẠI ĐÂY: Đổi từ "black" sang "green" để khớp hình mẫu
 
 
     // --- D. VẼ BIỂU ĐỒ ĐƯỜNG (LINE) ---
