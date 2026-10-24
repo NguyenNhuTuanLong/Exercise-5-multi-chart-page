@@ -23,9 +23,7 @@ const innerChartDonut = svgDonut.append("g")
 // ==========================================================
 d3.csv("data/tvSizeCount.csv", d => {
     return {
-        // Tên danh mục kích thước
         Screensize_Category: d.Screensize_Category, 
-        // ⚠️ QUAN TRỌNG: Lấy đúng tên cột đếm số lượng mà KNIME tự tạo
         Count: +d["Count*(screensize_inch)"] 
     };
 }).then(data => {
@@ -52,12 +50,10 @@ const drawDonutChart = data => {
                   .sort(null); // Giữ nguyên thứ tự trong file CSV
 
     // --- C. HÀM TẠO HÌNH CUNG (ARC GENERATOR) ---
-    // Khai báo bán kính trong và ngoài để tạo hình bánh vòng (donut)
+    // SỬA TẠI ĐÂY: Xóa padAngle và cornerRadius để bánh liền khối giống hình mẫu
     const arcGenerator = d3.arc()
                            .innerRadius(radius * 0.6) // Bán kính lỗ hổng ở giữa (60%)
-                           .outerRadius(radius)       // Bán kính viền ngoài
-                           .padAngle(0.02)            // Khoảng hở giữa các lát
-                           .cornerRadius(5);          // Bo tròn góc viền lát cắt
+                           .outerRadius(radius);      // Bán kính viền ngoài (100%)
 
     // --- D. VẼ CÁC LÁT CẮT ---
     innerChartDonut.selectAll("path")
@@ -65,7 +61,7 @@ const drawDonutChart = data => {
                    .join("path")
                    .attr("d", arcGenerator) // Vẽ viền dựa trên arcGenerator
                    .attr("fill", d => color(d.data.Screensize_Category)) // Tô màu theo kích thước
-                   .attr("stroke", "white")
+                   .attr("stroke", "white") // Đường viền trắng mỏng ngăn cách
                    .attr("stroke-width", 2);
 
     // --- E. GẮN NHÃN (LABELS) ---
