@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exercise 5 - Multi Charts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 - Multi-chart page</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Energy Consumption of 55" TVs</h1>
-    <div id="bar-chart" class="responsive-svg-container"></div>
+    <nav class="top-nav">
+        <a href="#">&larr; Exercise 4.3 - 4.6</a>
+        <span>Exercise 5: Multi-chart page</span>
+        <a href="#">Exercise 6 &rarr;</a>
+    </nav>
 
-    <h1>Average Electricity Price (1998-2024)</h1>
-    <div id="line-chart" class="responsive-svg-container"></div>
+    <main>
+        <h1 class="section-title">Energy Consumption of 55" TVs</h1>
+        <div id="bar-chart" class="responsive-svg-container"></div>
 
-    <h1>Proportion of TV Sizes</h1>
-    <!-- KHUNG CHỨA BIỂU ĐỒ DONUT -->
-    <div id="donut-chart" class="responsive-svg-container"></div>
+        <h1 class="section-title">Average Electricity Price (1998-2024)</h1>
+        <div id="line-chart" class="responsive-svg-container"></div>
+
+        <h1 class="section-title">Proportion of TV Sizes</h1>
+        <div id="donut-chart" class="responsive-svg-container"></div>
+    </main>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/line-chart.js"></script>
-    <!-- NHÚNG FILE CODE DONUT -->
     <script src="js/donut-chart.js"></script>
 </body>
 </html>
